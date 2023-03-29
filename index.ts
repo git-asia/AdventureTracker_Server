@@ -1,6 +1,7 @@
 import express, {json} from 'express';
 import cors from 'cors';
 import 'express-async-errors';
+import {handleError} from "./utils/errors";
 
 const app = express();
 
@@ -9,7 +10,18 @@ app.use(cors( {
 }));
 
 app.use(json());
+app.use(handleError);
 
-app.listen(3002, '0.0.0.0', () => {
-    console.log('Listening on port http://localhost:3002');
+app.get('/', (req, res) => {
+    res.send({
+        is: 'working!!! 🥳'
+    });
+})
+
+// app.get('/', async (req, res, next) => {
+//     throw new Error('😱 We have an error!');
+// });
+
+app.listen(3300, 'localhost', () => {
+    console.log('Listening on port http://localhost:3300');
 });
