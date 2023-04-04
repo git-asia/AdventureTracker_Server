@@ -1,1 +1,1 @@
-export * from './type-test';
+export * from './post';
