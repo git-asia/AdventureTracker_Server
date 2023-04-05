@@ -2,6 +2,7 @@ import {PostEntity, SimplePostEntity} from "../types";
 import {ValidationError} from "../utils/errors";
 import {FieldPacket} from "mysql2";
 import {pool} from "../utils/db";
+import {v4 as uuid} from 'uuid';
 
 type PostRecordResults = [PostEntity[], FieldPacket[]];
 
@@ -85,5 +86,15 @@ export class PostRecord implements PostEntity {
                 id, lat, lon,
             };
         });
+    }
+
+    async insert(): Promise<void> {
+        if (!this.id) {
+            this.id = uuid();
+        } else {
+            throw new Error('Cannot insert something that is already inserted!');
+        }
+
+        await pool.execute("INSERT INTO `trips`(`id`, `title`, `date`, `duration`, `kind`, `tags`, `description`,  `url`, `iframe`, `lat`, `lon`) VALUES(:id, :title, :date, :duration, :kind, :tags, :description, :url, :iframe, :lat, :lon)", this);
     }
 }
