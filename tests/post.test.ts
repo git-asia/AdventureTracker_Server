@@ -1,4 +1,23 @@
 import {PostRecord} from "../records/post.record";
+import {PostEntity} from "../types";
+import {pool} from "../utils/db";
+
+const defObj = {
+    title: 'wycieczka',
+    date: '2021-11-10',
+    duration: 4,
+    kind: 'hiking',
+    tags: 'góry, bacówki',
+    description: 'opis',
+    url: 'https://en.mapy.cz/s/cunebumeku',
+    iframe: '<iframe style="border:none" src="https://en.frame.mapy.cz/s/mokuvarefo" width="400" height="280" frameborder="0"></iframe>',
+    lat: 49.7970994,
+    lon: 19.0946544,
+}
+
+afterAll(async () => {
+    await pool.end();
+});
 
 test('PostRecord.getOne returns data from database for one entry.', async () => {
 
@@ -17,4 +36,46 @@ test('PostRecord.getOne returns null from database for non-existing entry.', asy
     expect(post).toBeNull();
 
 });
+
+test('PostRecord.findAll returns array of found entries.', async () => {
+
+    const posts = await PostRecord.findAll('');
+
+    expect(posts).not.toEqual([]);
+    expect(posts[0].id).toBeDefined();
+
+    console.log(posts)
+});
+
+test('PostRecord.findAll returns array of found entries when searching for "T".', async () => {
+
+    const posts = await PostRecord.findAll('T');
+
+    expect(posts).not.toEqual([]);
+    expect(posts[0].id).toBeDefined();
+
+});
+
+test('PostRecord.findAll returns empty array when searching for something that does not exist.', async () => {
+
+    const posts = await PostRecord.findAll('----------------------');
+
+    expect(posts).toEqual([]);
+
+});
+
+test('PostRecord.findAll returns only filtered data.', async () => {
+
+    const posts = await PostRecord.findAll('');
+
+    expect((posts[0] as PostEntity).duration).toBeUndefined();
+    expect((posts[0] as PostEntity).description).toBeUndefined();
+    expect((posts[0] as PostEntity).kind).toBeUndefined();
+    expect((posts[0] as PostEntity).date).toBeUndefined();
+    expect((posts[0] as PostEntity).tags).toBeUndefined();
+    expect((posts[0] as PostEntity).url).toBeUndefined();
+    expect((posts[0] as PostEntity).iframe).toBeUndefined();
+
+});
+
 

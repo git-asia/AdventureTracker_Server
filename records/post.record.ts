@@ -1,4 +1,4 @@
-import {PostEntity} from "../types";
+import {PostEntity, SimplePostEntity} from "../types";
 import {ValidationError} from "../utils/errors";
 import {FieldPacket} from "mysql2";
 import {pool} from "../utils/db";
@@ -71,7 +71,19 @@ export class PostRecord implements PostEntity {
     }
 
 
-    // static async findAll(s: string) {
-    //
-    // }
+    static async findAll(name: string): Promise<SimplePostEntity[]> {
+        const [results] = await pool.execute("SELECT * FROM `trips` WHERE `title` LIKE :search", {
+            search: `%${name}%`,
+        }) as PostRecordResults;
+
+        return results.map(result => {
+            const {
+                id, lat, lon,
+            } = result;
+
+            return {
+                id, lat, lon,
+            };
+        });
+    }
 }
