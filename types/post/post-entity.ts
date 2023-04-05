@@ -6,7 +6,7 @@ export interface SimplePostEntity {
 
 export interface PostEntity extends SimplePostEntity {
     title: string;
-    date: Date;
+    date: string;
     duration: number;
     kind: string;
     tags: string;
