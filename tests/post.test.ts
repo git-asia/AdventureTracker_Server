@@ -3,7 +3,7 @@ import {PostEntity} from "../types";
 import {pool} from "../utils/db";
 
 const defObj = {
-    title: 'wycieczka',
+    title: '[@Test] wycieczka',
     date: '2021-11-10',
     duration: 4,
     kind: 'hiking',
@@ -79,3 +79,35 @@ test('PostRecord.findAll returns only filtered data.', async () => {
 });
 
 
+test('PostRecord.insert returns new UUID.', async () => {
+
+    const post = new PostRecord(defObj);
+    await post.insert();
+
+    expect(post.id).toBeDefined();
+    expect(typeof post.id).toBe('string');
+
+});
+
+test('PostRecord.insert inserts data to database.', async () => {
+
+    const post = new PostRecord(defObj);
+    await post.insert();
+
+    const foundPost = await PostRecord.getOne(post.id);
+
+    expect(foundPost).toBeDefined();
+    expect(foundPost).not.toBeNull();
+    expect(foundPost.id).toBe(post.id);
+
+});
+
+test('PostRecord.insert doesn\'t insert negatives values for duration field.', async () => {
+
+    const post = new PostRecord(defObj);
+    await post.insert();
+
+    expect(post.duration).toBeGreaterThanOrEqual(0);
+    expect(typeof post.duration).toBe('number');
+
+});

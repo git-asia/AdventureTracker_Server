@@ -1,7 +1,7 @@
 import {PostRecord} from "../records/post.record";
 
 const defObj = {
-    title: 'wycieczka',
+    title: '[@Test] wycieczka',
     date: '2021-11-10',
     duration: 4,
     kind: 'hiking',
@@ -16,7 +16,7 @@ const defObj = {
 test('Can build PostRecord', () => {
     const post = new PostRecord(defObj);
 
-    expect(post.title).toBe('wycieczka');
+    expect(post.title).toBe('[@Test] wycieczka');
     expect(post.description).toBe('opis');
 });
 
