@@ -1,14 +1,15 @@
-import express, {json} from 'express';
+import express, {json, Router} from 'express';
 import cors from 'cors';
 import 'express-async-errors';
 import {handleError} from "./utils/errors";
 import rateLimit from "express-rate-limit";
-
+import {postRouter} from "./router/post.router";
+import {config} from "./config/config";
 
 const app = express();
 
 app.use(cors( {
-    origin: 'http://localhost:3000',
+    origin: config.corsOrigin,
 }));
 
 app.use(json());
@@ -17,7 +18,10 @@ app.use(rateLimit({
     max: 100,
 }))
 
-// paths
+const router = Router();
+router.use('/post', postRouter);
+
+app.use('/api', router);
 
 app.use(handleError);
 
