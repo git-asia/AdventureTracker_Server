@@ -7,7 +7,7 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "downlevelIteration": true,
-    "lib": ["es6"],
+    "lib": ["es2020"],
     "outDir": "dist",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
