@@ -30,7 +30,7 @@ export class PostRecord implements PostEntity {
         }
 
         if (!obj.duration) {
-            throw new ValidationError('Pole "długość (dni)" nie może być puste ani mieć wartości negatywnej.');
+            throw new ValidationError('Pole "długość (dni)" nie może być puste.');
         }
 
         if (!obj.kind) {
