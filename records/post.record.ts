@@ -67,7 +67,6 @@ export class PostRecord implements PostEntity {
             id,
         }) as PostRecordResults;
 
-    console.log(results[0])
         return results.length === 0 ? null : new PostRecord(results[0]);
     }
 
@@ -86,6 +85,12 @@ export class PostRecord implements PostEntity {
                 id, lat, lon,
             };
         });
+    }
+
+    static async listAll(): Promise<PostRecord[]> {
+        const [results] = await pool.execute("SELECT * FROM `trips`") as PostRecordResults;
+
+        return results.map(result => new PostRecord(result));
     }
 
     async insert(): Promise<void> {

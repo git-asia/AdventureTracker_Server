@@ -8,6 +8,11 @@ export const postRouter = Router()
         res.json(posts);
     })
 
+    .get('/posts', async (req, res) => {
+        const postsList = await PostRecord.listAll();
+        res.json(postsList);
+    })
+
     .get('/:id', async (req, res) => {
         const post = await PostRecord.getOne(req.params.id);
         res.json(post);
