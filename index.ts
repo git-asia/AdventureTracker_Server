@@ -21,7 +21,7 @@ app.use(rateLimit({
 const router = Router();
 router.use('/post', postRouter);
 
-app.use('/api', router);
+app.use('/app', router);
 
 app.use(handleError);
 
