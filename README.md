@@ -18,7 +18,11 @@ Jest to prosta, acz użyteczna apka służąca do zapisywania i przeglądanie od
 # Demo
 https://jt.networkmanager.pl/
 
-(złośliwość rzeczy martwych, albo w pośpiechu coś źle podłączyłam, bo BE odmawia dostępu)
+Po kilku próbach deplojmentu na NM ciągle brak jest połączenia z BE 🤨 (sypie 503 na zmianę z 403).
+Wcześniej wrzucana apka MegaAds dobrze tam śmigała, więc nie wiem o co mu chodzi.
+
+![Screenshot 2023-04-13 at 16 49 49](https://user-images.githubusercontent.com/94705253/231799106-017ac3d9-1b8e-4dbc-9772-4763047ffcc0.png)
+
 
 # Stack
 - Express.js
@@ -81,8 +85,10 @@ Aplikacja nie jest jeszcze ukończona...
 
 ## @TODO
 - wyświetlenie wszystkich postów;
--  rejestracja i logowanie (Nest.js)
+- rejestracja i logowanie (Nest.js)
 - dodawanie zdjęć do postów;
 - zmiana mapy na mapbox;
 - wyszukiwanie po #tagach i po rodzaju aktywności;
-- możliwość edycji postów.
+- panel - losowe wyprawy w prawej części strony głównej;
+- możliwość edycji postów;
+- może jakaś biblioteka do stylowania (np. MUI)
