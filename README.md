@@ -18,8 +18,8 @@ Jest to prosta, acz użyteczna apka służąca do zapisywania i przeglądanie od
 # Demo
 https://jt.networkmanager.pl/
 
-Po kilku próbach deplojmentu na NM ciągle brak jest połączenia z BE 🤨 (sypie 503 na zmianę z 403).
-Wcześniej wrzucana apka MegaAds dobrze tam śmigała, więc nie wiem o co mu chodzi.
+Po kilku próbach deplojmentu na NM ciągle brak jest połączenia z BE 🤨 Sypie 503 na zmianę z 403 w zależności czy użyty jest automatycznie wygenerowany .htaccess czy `<IfModule mod rewrite.c>`.
+Wcześniej wrzucana apka MegaAds dobrze tam śmigała, więc nie wiem o co mu chodzi 🤷‍♀️
 
 ![Screenshot 2023-04-13 at 16 49 49](https://user-images.githubusercontent.com/94705253/231799106-017ac3d9-1b8e-4dbc-9772-4763047ffcc0.png)
 
