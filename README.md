@@ -2,7 +2,7 @@
 
 # O aplikacji
 
-Jest to prosta, acz użyteczna apka służąca do zapisywania i przeglądanie odbytych wycieczek. Jest podział na rodzaj wykonywanej aktywności: hiking, wspinaczka, alpinizm, via ferrata, rower, kajak, jacht. Po skończeniu pracy nad aplikacją, przeznaczona będzie do użytku osobistego.
+Jest to prosta, acz użyteczna aplikacja desktopowa służąca do zapisywania i przeglądanie odbytych wycieczek. Zawiera podział na rodzaj wykonywanej aktywności: hiking, wspinaczka, alpinizm, via ferrata, rower, kajak, jacht. Po skończeniu pracy nad aplikacją, przeznaczona będzie do użytku osobistego.
 
 # Odpalenia aplikacji lokalnie
 - Ściągnij BE (branch main):
