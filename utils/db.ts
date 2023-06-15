@@ -9,4 +9,14 @@ export const pool = createPool({
     port: config.port,
     namedPlaceholders: true,
     decimalNumbers: true,
+    socketPath: config.socketPath,
 });
+
+// Test query
+pool.query('SELECT `title` FROM trips')
+    .then(([rows, fields]) => {
+        console.log('Results of your query:', rows);
+    })
+    .catch((error) => {
+        console.error('Error in query:', error);
+    });
