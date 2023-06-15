@@ -2,26 +2,29 @@
 
 # O aplikacji
 
-Jest to prosta, acz użyteczna aplikacja desktopowa służąca do zapisywania i przeglądanie odbytych wycieczek. Zawiera podział na rodzaj wykonywanej aktywności: hiking, wspinaczka, alpinizm, via ferrata, rower, kajak, jacht. Po skończeniu pracy nad aplikacją, przeznaczona będzie do użytku osobistego.
+Jest to prosta aplikacja desktopowa służąca do zapisywania i przeglądanie odbytych wycieczek. Zawiera podział na rodzaj aktywności: hiking, wspinaczka, alpinizm, via ferrata, rower, kajak, jacht. Po skończeniu pracy nad aplikacją, przeznaczona będzie ona do użytku osobistego.
 
-# Odpalenia aplikacji lokalnie
+# Uruchomienie aplikacji lokalnie
+
 - Ściągnij BE (branch main):
 🔗 https://github.com/git-asia/AdventureTracker_Server
+
 - Ściągnij FE (branch main):
 🔗 https://github.com/git-asia/AdventureTracker_Client
-- Zainstaluj zależności z package.json, zarówno na FE, jak i na BE:
+
+- Zainstaluj zależności z package.json:
 `npm i`
-- Na BE - zmienić dane w pliku config.example.ts na istniejącą bazę i zmienić nazwę pliku na config.ts;
-- Odpalić BE:  `npm start` (localhost:3300)
-- Odpalić FE:  `npm start` (localhost:3000)
+
+- Na BE - zamień dane w pliku config.example.ts na istniejącą bazę i zmień nazwę pliku na config.ts
+  
+🔗 plik sql z bazą: https://drive.google.com/file/d/1HnYYzIRe0iR1oTSb0cpuFKn1QJ7WZZig/view?usp=sharing
+
+- Odpal BE:  `npm start` (localhost:3003)
+- Odpal FE:  `npm start` (localhost:3000)
+
 
 # Demo
 https://jt.networkmanager.pl/
-
-Po kilku próbach deplojmentu na NM ciągle brak jest połączenia z BE 🤨 Sypie 503 na zmianę z 403 w zależności czy użyty jest automatycznie wygenerowany .htaccess czy `<IfModule mod rewrite.c>`.
-Wcześniej wrzucana apka MegaAds dobrze tam śmigała, więc nie wiem o co mu chodzi 🤷‍♀️
-
-![Screenshot 2023-04-13 at 16 49 49](https://user-images.githubusercontent.com/94705253/231799106-017ac3d9-1b8e-4dbc-9772-4763047ffcc0.png)
 
 
 # Stack
@@ -67,7 +70,7 @@ Aplikacja nie jest jeszcze ukończona...
 ![Form_page3](https://user-images.githubusercontent.com/94705253/231602123-0becd631-6f51-4e1f-90f6-31912b635672.png)
 
 - powrót na stronę główną po wysłaniu formularza
-- 
+  
 ![SuccessInfo](https://user-images.githubusercontent.com/94705253/231602182-50f45f9c-1772-45cf-b152-3fe51231f0e1.png)
 
 
