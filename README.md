@@ -1,8 +1,18 @@
 # AdventureTracker
 
+<img width="272" alt="logo" src="https://github.com/git-asia/AdventureTracker_Client/assets/94705253/58dedefc-4e27-4b49-b0ed-ed91c49d820a">
+
 # O aplikacji
 
 Jest to prosta aplikacja desktopowa służąca do zapisywania i przeglądanie odbytych wycieczek. Zawiera podział na rodzaj aktywności: hiking, wspinaczka, alpinizm, via ferrata, rower, kajak, jacht. Po skończeniu pracy nad aplikacją, przeznaczona będzie ona do użytku osobistego.
+
+<br>
+
+### Link do frontendowej części aplikacji
+🔗 https://github.com/git-asia/AdventureTracker_Client
+
+<br>
+
 
 # Uruchomienie aplikacji lokalnie
 
@@ -22,9 +32,13 @@ Jest to prosta aplikacja desktopowa służąca do zapisywania i przeglądanie od
 - Odpal BE:  `npm start` (localhost:3003)
 - Odpal FE:  `npm start` (localhost:3000)
 
+<br>
+
 
 # Demo
 https://jt.networkmanager.pl/
+
+<br>
 
 
 # Stack
@@ -35,9 +49,14 @@ https://jt.networkmanager.pl/
 - sql
 - sass
 
+<br>
+
+
 # WIP
 
 Aplikacja nie jest jeszcze ukończona...
+
+<br>
 
 ## Co udało się wdrożyć:
 - mapa z pinezkami w odpowiedniej lokalizacji
@@ -84,6 +103,7 @@ Aplikacja nie jest jeszcze ukończona...
 
 ![NotFoundPage](https://user-images.githubusercontent.com/94705253/231602274-982ef44d-a4e6-4cfc-a893-539f7d96e0aa.png)
 
+<br>
 
 
 ## @TODO
