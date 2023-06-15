@@ -21,8 +21,7 @@ app.use(rateLimit({
 const router = Router();
 router.use('/post', postRouter);
 
-// On deploy add folder name hera, e.g 'app'
-app.use('/', router);
+app.use('/app', router);
 
 app.use(handleError);
 
@@ -36,6 +35,6 @@ app.get('/', (req, res) => {
 //     throw new Error('😱 We have an error!');
 // });
 
-app.listen(3300, 'localhost', () => {
-    console.log('Listening on port http://localhost:3300');
+app.listen(3003, 'localhost', () => {
+    console.log('Listening on port http://localhost:3003');
 });
