@@ -21,7 +21,8 @@ app.use(rateLimit({
 const router = Router();
 router.use('/post', postRouter);
 
-app.use('/app', router);
+// On deploy add folder name hera, e.g 'app'
+app.use('/', router);
 
 app.use(handleError);
 
