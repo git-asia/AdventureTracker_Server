@@ -1,34 +1,34 @@
-import express, {json, Router} from 'express';
-import cors from 'cors';
-import 'express-async-errors';
-import {handleError} from "./utils/errors";
-import rateLimit from "express-rate-limit";
-import {postRouter} from "./router/post.router";
-import {config} from "./config/config";
+import express, { json, Router } from 'express'
+import cors from 'cors'
+import 'express-async-errors'
+import { handleError } from './utils/errors'
+import rateLimit from 'express-rate-limit'
+import { postRouter } from './router/post.router'
+import { config } from './config/config'
 
-const app = express();
+const app = express()
 
-app.use(cors( {
-    origin: config.corsOrigin,
-}));
-
-app.use(json());
-app.use(rateLimit({
-    windowMs: 5 * 60 * 1000,
-    max: 100,
+app.use(cors({
+  origin: config.corsOrigin
 }))
 
-const router = Router();
-router.use('/post', postRouter);
+app.use(json())
+app.use(rateLimit({
+  windowMs: 5 * 60 * 1000,
+  max: 100
+}))
 
-app.use('/app', router);
+const router = Router()
+router.use('/post', postRouter)
 
-app.use(handleError);
+app.use('/app', router)
+
+app.use(handleError)
 
 app.get('/', (req, res) => {
-    res.send({
-        is: 'working!!! 🥳'
-    });
+  res.send({
+    is: 'working!!! 🥳'
+  })
 })
 
 // app.get('/', (req, res, next) => {
@@ -36,5 +36,5 @@ app.get('/', (req, res) => {
 // });
 
 app.listen(3003, 'localhost', () => {
-    console.log('Listening on port http://localhost:3003');
-});
+  console.log('Listening on port http://localhost:3003')
+})
