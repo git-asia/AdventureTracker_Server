@@ -1,5 +1,5 @@
-import { createPool } from 'mysql2/promise'
-import { config } from '../config/config'
+import { createPool } from 'mysql2/promise';
+import { config } from '../config/config';
 
 export const pool = createPool({
   host: config.dbHost,
@@ -10,13 +10,13 @@ export const pool = createPool({
   namedPlaceholders: true,
   decimalNumbers: true,
   socketPath: config.socketPath
-})
+});
 
 // Test query
 pool.query('SELECT `title` FROM trips')
   .then(([rows, fields]) => {
-    console.log('Results of your query:', rows)
+    console.log('Results of your query:', rows);
   })
   .catch((error) => {
-    console.error('Error in query:', error)
-  })
+    console.error('Error in query:', error);
+  });

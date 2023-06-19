@@ -1,25 +1,24 @@
-import { Router } from 'express'
-import { PostRecord } from '../records/post.record'
+import { Router } from 'express';
+import { PostRecord } from '../records/post.record';
 
 export const postRouter = Router()
-
   .get('/search/:title?', async (req, res) => {
-    const posts = await PostRecord.findAll(req.params.title ?? '')
-    res.json(posts)
+    const posts = await PostRecord.findAll(req.params.title ?? '');
+    res.json(posts);
   })
 
   .get('/posts', async (req, res) => {
-    const postsList = await PostRecord.listAll()
-    res.json(postsList)
+    const postsList = await PostRecord.listAll();
+    res.json(postsList);
   })
 
   .get('/:id', async (req, res) => {
-    const post = await PostRecord.getOne(req.params.id)
-    res.json(post)
+    const post = await PostRecord.getOne(req.params.id);
+    res.json(post);
   })
 
   .post('/', async (req, res) => {
-    const post = new PostRecord(req.body)
-    await post.insert()
-    res.json(post)
-  })
+    const post = new PostRecord(req.body);
+    await post.insert();
+    res.json(post);
+  });
