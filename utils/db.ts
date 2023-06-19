@@ -6,11 +6,12 @@ export const pool = createPool({
   user: config.dbUser,
   password: config.dbPassword,
   database: config.dbDatabase,
-  port: config.port,
   namedPlaceholders: true,
   decimalNumbers: true,
-  socketPath: config.socketPath
+  // port: config.port,
+  // socketPath: config.socketPath
 });
+
 
 // Test query
 pool.query('SELECT `title` FROM trips')
